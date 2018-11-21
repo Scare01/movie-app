@@ -6,9 +6,7 @@ import { Link } from 'react-router-dom';
 export default class Movie extends React.Component {
   
 
-  clickDetails = () => {
-    this.props.viewDetails(this.props.movie);
-  }
+ 
     
   render(){
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug',
@@ -28,7 +26,24 @@ export default class Movie extends React.Component {
                         {this.props.movie.release_date.split('-')[0]}
                         </i>
                         : null;
-    const link_url = "/viewDetails/";    
+    const link_url = "/viewDetails/";  
+    
+    const link_detail = window.location.href.includes('viewDetails') ?
+                        null :
+                        <Link to={link_url + this.props.movie.id}>
+                          Details
+                        </Link>;
+    const genres = window.location.href.includes('viewDetails') ?
+                    <>
+                    {this.props.movie.genres.map(genre => 
+                      <>
+                        <span>{genre.name}</span>
+                        <span> </span>
+                      </>
+                    )}
+                    </> :
+                    null;
+
 
 
     return(
@@ -40,10 +55,11 @@ export default class Movie extends React.Component {
           <Item.Meta>
             {releaseDate}
           </Item.Meta>
+          <Item.Meta>
+            {genres}
+          </Item.Meta>
           <Item.Description>{this.props.movie.overview}</Item.Description>
-          <Link to={link_url + this.props.movie.id}>
-            Details
-          </Link>
+          {link_detail}
         </Item.Content>
       </Item>
     )

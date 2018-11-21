@@ -1,16 +1,24 @@
 import React from 'react';
 import { Header } from 'semantic-ui-react';
 
+import GetDetails from './getDetails';
+
 export default class ViewDetails extends React.Component {
 
   render() {
-
-    console.log(typeof window.location.href)
-    
+    const current_page = window.location.href;
+    const current_page_array = current_page.split('/');
+    const movieId = current_page_array[current_page_array.length -1];
+    const main_url = "https://api.themoviedb.org/3/movie/";
+    const api_key = "?api_key=8f2490decc0a336ae87db98a12a29a59";
+        
     return (
       <>
-      <Header as='h2' textAlign="center">Details</Header>
-      <h2>{window.location.href}</h2>
+      <GetDetails 
+        movieId={movieId}
+        main_url={main_url}
+        api_key={api_key}
+      />
       </>
     )
   }

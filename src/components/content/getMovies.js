@@ -25,7 +25,6 @@ export default class GetMovies extends React.Component {
             <Movie
               key={movie.id} 
               movie={movie}
-              viewDetails={this.viewDetails}
             />
           )}
         </Item.Group>

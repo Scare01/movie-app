@@ -1,17 +1,17 @@
 import React from 'react';
 import { Header } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './header.css';
 
 export default class HeaderApp extends React.Component {
   render() {
     return (
       <Header block>
-        <Link to="/" id="header">Movie App</Link>
-        <Link to="/searchMovie" className="links">Search</Link>
-        <Link to="/favorites" className="links">Favorites</Link>
-        <Link to="/popularTvShows" className="links">TV Shows</Link>
-        <Link to="/popularMovies" className="links">Movies</Link>
+        <NavLink to="/" id="header">Movie App</NavLink>
+        <NavLink to="/searchMovie" className="links">Search</NavLink>
+        <NavLink to="/favorites" className="links">Favorites</NavLink>
+        <NavLink to="/popularTvShows" className="links">TV Shows</NavLink>
+        <NavLink to="/popularMovies" className="links">Movies</NavLink>
       </Header>
     )
   }

@@ -12,8 +12,10 @@ export default class GetDetails extends React.Component {
           url={this.props.main_url + this.props.movieId + this.props.api_key}
         >
          {({data}) => (
-           <MovieDetail 
+           <MovieDetail
+              key={data.id} 
               movie={data}
+             
            />
          )}
 

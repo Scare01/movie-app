@@ -1,18 +1,24 @@
 import React from 'react';
+import { Header } from 'semantic-ui-react';
 import './details.css';
 
 import Movie from './movie';
+import GetCredits from './getCredits';
 
 export default class MovieDetail extends React.Component {
 
   render() {
-    const img_url = 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/';
+    
     return (
       <>
         <Movie 
           movie={this.props.movie}
+          
         />
-        
+        <Header as='h3'>Credits:</Header>
+        <GetCredits 
+          movie={this.props.movie}
+        />
 
       </>
     )

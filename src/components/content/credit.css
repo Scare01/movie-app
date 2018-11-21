@@ -1,0 +1,15 @@
+#credits > .card {
+  width: 200px;
+}
+
+#credits {
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  
+ 
+}
+
+#credits > .card {
+  
+}

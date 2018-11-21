@@ -17,7 +17,7 @@ export default class PopularTvShows extends React.Component {
 
         <GetMovies 
           main_url={main_url}
-          viewDetails={this.viewDetails}
+          
         />
 
       </>

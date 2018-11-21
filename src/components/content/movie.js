@@ -36,14 +36,11 @@ export default class Movie extends React.Component {
     const genres = window.location.href.includes('viewDetails') ?
                     <>
                     {this.props.movie.genres.map(genre => 
-                      <>
-                        <span>{genre.name}</span>
-                        <span> </span>
-                      </>
+                      <span key={genre.id}>{genre.name} </span>
                     )}
                     </> :
                     null;
-
+    const movie_url = this.props.movie_url;
 
 
     return(

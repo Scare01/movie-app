@@ -6,9 +6,7 @@ import Movie from './movie';
 
 export default class GetMovies extends React.Component {
   
-  viewDetails = (movie) => {
-    this.props.viewDetails(movie);
-  }
+
 
   render() {
     const main_url=this.props.main_url;
@@ -23,6 +21,7 @@ export default class GetMovies extends React.Component {
         <Item.Group>
           {data.results.map(movie =>
             <Movie
+              movie_url={main_url}
               key={movie.id} 
               movie={movie}
             />

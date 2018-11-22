@@ -26,7 +26,11 @@ export default class Movie extends React.Component {
                         {this.props.movie.release_date.split('-')[0]}
                         </i>
                         : null;
-    const link_url = "/viewDetails/";  
+    const link_url = window.location.href.includes('Movies') ?
+                     "/viewDetails/popularMovies/" :
+                     window.location.href.includes('Tv') ? 
+                     "/viewDetails/popularTvShows/" :
+                     null;  
     
     const link_detail = window.location.href.includes('viewDetails') ?
                         null :
@@ -40,7 +44,7 @@ export default class Movie extends React.Component {
                     )}
                     </> :
                     null;
-    const movie_url = this.props.movie_url;
+    
 
 
     return(

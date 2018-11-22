@@ -11,7 +11,8 @@ import PopularMovies from './components/content/popularMovies';
 import PopularTvShows from './components/content/popularTvShows';
 import SearchMovie from './components/content/searchMovie';
 import Favorites from './components/content/favorites';
-import ViewDetails from './components/content/viewDetails'
+import ViewDetailsPopularMovies from './components/content/viewDetailsPopularMovies'
+import ViewDetailsPopularTvShows from './components/content/viewDetailsPopularTvShows'
 
 import HeaderApp from './components/header/header';
 
@@ -28,10 +29,11 @@ class App extends React.Component {
           <Route path='/popularTvShows' component={PopularTvShows} />
           <Route path='/searchMovie' component={SearchMovie} />
           <Route path='/favorites' component={Favorites} />
-          <Route path='/viewDetails/:movieId' component={ViewDetails} />
+          <Route path='/viewDetails/popularMovies/:movieId' component={ViewDetailsPopularMovies} />
+          <Route path='/vieDetails/popularTvShows/:movieId' component={ViewDetailsPopularTvShows} />
         </div>
         
-
+        
         
       </>
 

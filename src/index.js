@@ -27,10 +27,10 @@ class App extends React.Component {
           <Route path='/' exact component={MainContent} />
           
           <Route path='/popularMovies' component={PopularMovies} />
-          <Route path='/popularMovies/viewDetails/:movieId' component={ViewDetailsPopularMovies} />
+          <Route path='/Movie/viewDetails/:movieId' component={ViewDetailsPopularMovies} />
 
           <Route path='/popularTvShows' component={PopularTvShows} />
-          <Route path='/popularTvShows/viewDetails/:movieId' component={ViewDetailsPopularTvShows} />
+          <Route path='/TvShow/viewDetails/:movieId' component={ViewDetailsPopularTvShows} />
 
           <Route path='/searchMovie' component={SearchMovie} />
           <Route path='/favorites' component={Favorites} />

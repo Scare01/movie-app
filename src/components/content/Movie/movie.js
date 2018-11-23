@@ -24,7 +24,7 @@ export default class Movie extends React.Component {
                         {this.props.movie.release_date.split('-')[0]}
                         </i>
                         : null;
-    const link_url = "/popularMovies/viewDetails/";  
+    const link_url = '/Movie/viewDetails/'
     
     const link_detail = window.location.href.includes('/popularMovies/viewDetails/') ?
                         null :
@@ -32,7 +32,7 @@ export default class Movie extends React.Component {
                           Details
                         </Link>;
                         
-    const genres = window.location.href.includes('popularMovies/viewDetails' + this.props.movie.id) ?
+    const genres = window.location.href.includes('/Movie/viewDetails/') ?
                     <>
                     {this.props.movie.genres.map(genre => 
                       <span key={genre.id}>{genre.name} </span>

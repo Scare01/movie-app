@@ -1,10 +1,15 @@
 import React from 'react';
 import { Fetch } from 'react-data-fetching';
+
+
 import MovieDetail from './movieDetail';
 
 export default class GetDetails extends React.Component {
 
   render() {
+    
+    console.log("getDetails");
+    console.log(this.props.movieId)
 
     return(
       <>
@@ -13,13 +18,10 @@ export default class GetDetails extends React.Component {
         >
          {({data}) => (
            
-          
-
-           <MovieDetail
+            <MovieDetail
               key={data.id} 
               movie={data}
-              url_window={this.props.url_window}
-           />
+            />
          )}
 
         </Fetch>

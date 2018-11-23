@@ -1,13 +1,11 @@
 import React from 'react';
 import { Item } from 'semantic-ui-react';
-import './content.css';
 import { Link } from 'react-router-dom';
 
-export default class Movie extends React.Component {
-  
 
- 
-    
+
+export default class Movie extends React.Component {
+
   render(){
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug',
                     'Sep', 'Oct', 'Nov', 'Dec']
@@ -26,28 +24,22 @@ export default class Movie extends React.Component {
                         {this.props.movie.release_date.split('-')[0]}
                         </i>
                         : null;
-    const link_url = window.location.href.includes('Movies') ?
-                     "/viewDetails/popularMovies/" :
-                     window.location.href.includes('Tv') ? 
-                     "/viewDetails/popularTvShows/" :
-                     null;  
+    const link_url = "/popularMovies/viewDetails/";  
     
-    const link_detail = window.location.href.includes('viewDetails') ?
+    const link_detail = window.location.href.includes('/popularMovies/viewDetails/') ?
                         null :
                         <Link to={link_url + this.props.movie.id}>
                           Details
                         </Link>;
-    const genres = window.location.href.includes('viewDetails') ?
+                        
+    const genres = window.location.href.includes('popularMovies/viewDetails' + this.props.movie.id) ?
                     <>
                     {this.props.movie.genres.map(genre => 
                       <span key={genre.id}>{genre.name} </span>
                     )}
                     </> :
                     null;
-    
-
-
-    return(
+       return(
       <Item>
         <Item.Image src={img_url+this.props.movie.poster_path} />
 
@@ -59,6 +51,7 @@ export default class Movie extends React.Component {
           <Item.Meta>
             {genres}
           </Item.Meta>
+       
           <Item.Description>{this.props.movie.overview}</Item.Description>
           {link_detail}
         </Item.Content>

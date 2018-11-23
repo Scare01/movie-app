@@ -1,9 +1,9 @@
 import React from 'react';
 import { Header } from 'semantic-ui-react';
-import './details.css';
+//import './details.css';
 
-import Movie from './movie';
-import GetCreditsMovie from '../People/getCreditsMovie';
+import TvShow from './tvshow';
+import GetCreditsTvShow from '../People/getCreditsTvShow';
 
 export default class MovieDetail extends React.Component {
 
@@ -13,15 +13,14 @@ export default class MovieDetail extends React.Component {
 
     return (
       <>
-        <Movie 
-          movie={this.props.movie}
+        <TvShow 
+          tvshow={this.props.tvshow}
         />
                 
         <Header as='h3'>Credits:</Header>
-        <GetCreditsMovie 
-          movie={this.props.movie}
+        <GetCreditsTvShow 
+          movie={this.props.tvshow}
         />
-
       </>
     )
   }

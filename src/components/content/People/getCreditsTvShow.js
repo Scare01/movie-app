@@ -5,9 +5,9 @@ import Credit from './credit';
 import './credit.css';
 
 
-export default class GetCreadits extends React.Component {
+export default class GetCreaditsTvShow extends React.Component {
   render() {
-    const url_credits_1 = "https://api.themoviedb.org/3/movie/"
+    const url_credits_1 = "https://api.themoviedb.org/3/tv/"
     const url_credits_2 = "/credits?api_key="
     const api_key = '8f2490decc0a336ae87db98a12a29a59';
 

@@ -4,11 +4,13 @@ import { Item } from 'semantic-ui-react'
 
 import TvShow from './tvshow';
 
-export default class GetTvShow extends React.Component {
+export default class GetTvShows extends React.Component {
   
   render() {
     const main_url=this.props.main_url;
     const api_key="8f2490decc0a336ae87db98a12a29a59";
+
+    
 
     return (
       <Fetch 
@@ -17,11 +19,11 @@ export default class GetTvShow extends React.Component {
 
       {({ data }) => (
         <Item.Group>
-          {data.results.map(movie =>
-            <Movie
-              movie_url={main_url}
-              key={movie.id} 
-              movie={movie}
+          {data.results.map(tvshow =>
+            <TvShow
+              tvshow_url={main_url}
+              key={tvshow.id} 
+              tvshow={tvshow}
             />
           )}
         </Item.Group>

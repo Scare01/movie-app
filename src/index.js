@@ -9,8 +9,8 @@ import {BrowserRouter, Route } from 'react-router-dom';
 import MainContent from './components/content/mainContent'
 import PopularMovies from './components/content/Movie/popularMovies';
 import PopularTvShows from './components/content/TvShow/popularTvShows';
-import SearchMovie from './components/content/searchMovie';
-import Favorites from './components/content/favorites';
+import SearchMovie from './components/content/Search/searchMovie';
+import Favorites from './components/content/Favorites/favorites';
 import ViewDetailsPopularMovies from './components/content/Movie/viewDetailsPopularMovies';
 import ViewDetailsPopularTvShows from './components/content/TvShow/viewDetailsPopularTvShows'
 

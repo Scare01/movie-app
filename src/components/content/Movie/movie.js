@@ -1,12 +1,41 @@
 import React from 'react';
-import { Item } from 'semantic-ui-react';
+import { Item, Button, Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 
 
 export default class Movie extends React.Component {
 
+  state = {
+    icon: Object.keys(localStorage).includes(JSON.stringify(this.props.movie.id)+'_movie') ?
+          true : false
+  }
+
+  
+  clickFavoriteButton = () => {
+    if (this.state.icon) {
+      let key = JSON.stringify(this.props.movie.id)+'_movie';
+      this.setState({ icon : !this.state.icon });
+      window.localStorage.removeItem(key);
+      
+    }else {
+      this.setState({ icon : !this.state.icon });
+      window.localStorage.setItem(JSON.stringify(this.props.movie.id)+'_movie', JSON.stringify(this.props.movie));
+      
+    }
+  }
+
+
+
+
+  
+
   render(){
+
+    console.log(Object.keys(localStorage));
+    
+
+
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug',
                     'Sep', 'Oct', 'Nov', 'Dec']
     const img_url = 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/';
@@ -26,7 +55,7 @@ export default class Movie extends React.Component {
                         : null;
     const link_url = '/MovieDetail/'
     
-    const link_detail = window.location.href.includes('/popularMovies/viewDetails/') ?
+    const link_detail = window.location.href.includes('MovieDetail') ?
                         null :
                         <Link to={link_url + this.props.movie.id}>
                           Details
@@ -52,8 +81,18 @@ export default class Movie extends React.Component {
             {genres}
           </Item.Meta>
        
-          <Item.Description>{this.props.movie.overview}</Item.Description>
+          <Item.Description>
+            {
+              window.location.href.includes('Detail') ?
+              this.props.movie.overview :
+              this.props.movie.overview.slice(0,250)+"..."
+             }
+          </Item.Description>
           {link_detail}
+            <Button icon onClick={this.clickFavoriteButton}>
+              <Icon name={this.state.icon ? 'heart' : 'heart outline'} /> 
+            </Button> 
+                
         </Item.Content>
       </Item>
     )

@@ -1,10 +1,33 @@
 import React from 'react';
-import { Item } from 'semantic-ui-react';
+import { Item, Button, Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 
 
 export default class TvShow extends React.Component {
+
+  state = {
+    icon: Object.keys(localStorage).includes(JSON.stringify(this.props.tvshow.id)+'_tvshow') ?
+          true : false
+  }
+
+  
+  clickFavoriteButton = () => {
+    if (this.state.icon) {
+      let key = JSON.stringify(this.props.tvshow.id)+'_tvshow';
+      this.setState({ icon : !this.state.icon });
+      window.localStorage.removeItem(key);
+      
+    }else {
+      this.setState({ icon : !this.state.icon });
+      window.localStorage.setItem(JSON.stringify(this.props.tvshow.id)+'_tvshow', JSON.stringify(this.props.tvshow));
+      
+    }
+  }
+
+
+
+
 
   render(){
     const img_url = 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/';
@@ -35,8 +58,17 @@ export default class TvShow extends React.Component {
             {genres}
           </Item.Meta>
        
-          <Item.Description>{this.props.tvshow.overview}</Item.Description>
+          <Item.Description>
+            {
+              window.location.href.includes('Details') ?
+              this.props.tvshow.overview :
+              this.props.tvshow.overview.slice(0,250)+'...'
+            }
+          </Item.Description>
           {link_detail}
+          <Button icon onClick={this.clickFavoriteButton}>
+              <Icon name={this.state.icon ? 'heart' : 'heart outline'} /> 
+            </Button> 
         </Item.Content>
       </Item>
     )

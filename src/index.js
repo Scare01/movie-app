@@ -6,7 +6,7 @@ import 'semantic-ui-css/semantic.min.css';
 
 import {BrowserRouter, Route } from 'react-router-dom';
 
-import MainContent from './components/content/mainContent'
+import MainContent from './components/content/MainContent/mainContent'
 import PopularMovies from './components/content/Movie/popularMovies';
 import PopularTvShows from './components/content/TvShow/popularTvShows';
 import SearchMovie from './components/content/Search/searchMovie';

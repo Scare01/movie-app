@@ -3,6 +3,7 @@ import React from 'react';
 
 import GetDetails from './getDetails';
 
+
 export default class ViewDetailsPopularMovies extends React.Component {
 
   render() {

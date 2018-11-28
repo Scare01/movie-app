@@ -33,7 +33,7 @@ export default class GetRecomMovie extends React.Component {
                 <a href={movieDetailUrl+movie.id}>
                   <Item.Image size='small' src={img_url+movie.poster_path} />
                 </a>
-                <Item.Meta textAlign='center'>
+                <Item.Meta>
                   {movie.title}
                 </Item.Meta>
               </Item>

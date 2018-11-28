@@ -24,6 +24,7 @@ export default class MovieDetail extends React.Component {
         />
 
         <Header as='h3'>Recommendtation:</Header>
+        
         <GetRecomMovie 
           movie={this.props.movie}
         />

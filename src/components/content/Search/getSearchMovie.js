@@ -22,31 +22,40 @@ export default class GetSearchMovie extends React.Component {
         <Fetch url={main_url+api_key+'&query='+request}>
           {({data}) => (
             data.results.map(movie =>
-                <Item key={movie.id}>
-                  <Item.Image src={img_url+movie.poster_path} />
-                  <Item.Content>
-                    <Item.Header>
-                      {
-                        movie.media_type === 'movie' ? 
-                        movie.title :
-                        movie.name
-                      }
-                    </Item.Header>
-                    <Item.Meta>
-                      {movie.media_type}
-                    </Item.Meta>
-                    <Item.Description>
-                      {movie.overview.slice(0,250)+'...'}
-                    </Item.Description>
-                    <Link to={ movie.media_type === 'movie' ? 
+                 movie.poster_path ?
+
+                  <Item key={movie.id}>
+                    <Item.Image src={img_url+movie.poster_path} />
+                    <Item.Content>
+                      <Item.Header>
+                        {
+                          movie.media_type === 'movie' ? 
+                          movie.title :
+                          movie.name
+                        }
+                      </Item.Header>
+                      <Item.Meta>
+                        {movie.media_type}
+                      </Item.Meta>
+                      <Item.Description>
+                        {
+                         movie.overview ?
+                         movie.overview.slice(0,250) + '...' :
+                         null
+                        }
+                      </Item.Description>
+                      <Link to={ movie.media_type === 'movie' ? 
                               movieDetailUrl+movie.id :
                               tvShowDetailUrl+movie.id
                               } 
-                    > Details </Link> 
+                      > Details </Link> 
                                        
-                  </Item.Content>
-                  
-                </Item>
+                    </Item.Content>
+                  </Item> :
+                  null
+                
+                
+                
                            
               )
             )}

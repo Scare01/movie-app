@@ -1,6 +1,6 @@
 import React from 'react';
 import { Input, Header, Button } from 'semantic-ui-react';
-import '../content.css'
+
 
 import GetSearchMovie from './getSearchMovie';
 

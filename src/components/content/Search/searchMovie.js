@@ -11,85 +11,61 @@ export default class SearchMovie extends React.Component {
   
 
   state = {
-    search_request: null,
+    search_request: '',
     colorMovie: 'blue',
     colorTvShow: 'blue',
     main_url: null,
-    searchMovie: null,  
+    searchMovie: '',  
   }
 
     
   setSearchRequest = (e) => {
     this.setState({
-      search_request: e.target.value
+      search_request: e.target.value,
+      searchMovie: '',
     });
     e.preventDefault();
   }
 
   searchMovie = () => {
     this.setState({
-      searchMovie: this.state.search_request
+      searchMovie: this.state.search_request,
+      search_request: '',
+      
     });
+
+    
+  
+    
   }
 
-
-  clickMovie = () => {
-    this.setState({
-      colorMovie: 'facebook',
-      colorTvShow: 'blue',
-      main_url: 'https://api.themoviedb.org/3/search/movie?api_key=',
-    });
-  }
-
-  clickTvshow = () => {
-    this.setState({
-      colorTvShow: 'facebook',
-      colorMovie: 'blue',
-      main_url: 'https://api.themoviedb.org/3/search/tv?api_key='
-    })
-  }
 
   
   render() {
     
-     
+    
     
     return (
       <>
-        <b>Befor search choose movie or tvshow: </b>
-
-        <Button.Group>
-          <Button 
-            onClick={this.clickMovie} 
-            color={this.state.colorMovie}
-          >
-            Movie
-          </Button>
-          <Button 
-            onClick={this.clickTvshow} 
-            color={this.state.colorTvShow}
-          >
-            TvShow
-          </Button> 
-        </Button.Group>
-
         
-
         <Input
           onChange={this.setSearchRequest}
           placeholder="search movie or tv show" 
+          value={this.state.search_request}
         />
         <Button onClick={this.searchMovie}>Search</Button>
 
         <Header as="h2" textAlign="center">Search results: </Header>
         
-        {this.state.search_request ? 
+        {this.state.searchMovie ?
           <GetSearchMovie 
             movie={this.state.searchMovie}
             main_url={this.state.main_url}
           /> :
           null
-        }
+
+        }   
+         
 
       
         

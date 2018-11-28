@@ -32,7 +32,7 @@ export default class Movie extends React.Component {
 
   render(){
 
-    console.log(Object.keys(localStorage));
+    
     
 
 

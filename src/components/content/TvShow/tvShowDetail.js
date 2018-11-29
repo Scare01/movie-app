@@ -4,6 +4,7 @@ import { Header } from 'semantic-ui-react';
 
 import TvShow from './tvshow';
 import GetCreditsTvShow from '../People/getCreditsTvShow';
+import GetRecomTvShow from './getRecomTv';
 
 export default class MovieDetail extends React.Component {
 
@@ -21,6 +22,11 @@ export default class MovieDetail extends React.Component {
         <GetCreditsTvShow 
           movie={this.props.tvshow}
         />
+        <Header as='h3'>Recommendations:</Header>
+        <GetRecomTvShow
+          tvshow={this.props.tvshow} 
+        />
+
       </>
     )
   }

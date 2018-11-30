@@ -1,0 +1,45 @@
+#mainContent {
+  display: flex;
+  width: 100%;
+  margin:0 auto;
+
+}
+
+#movies {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+#movies_small {
+  display: flex;
+}
+
+#movie_title {
+  position: relative;
+  display: inline-block;
+  font-size: 1.5em;
+  text-shadow: 2px 2px 2px black;
+  color: white;
+  top: -30px;
+  left: 10px;
+  
+}
+
+
+.movies_item:last-child {
+  float: right;
+}
+
+
+
+
+
+#tvshows {
+  width: 100%;
+  margin: 10px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+

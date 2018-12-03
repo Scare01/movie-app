@@ -1,7 +1,9 @@
 import React from 'react';
 import { Header } from 'semantic-ui-react';
 
+
 import GetMovies from './getMovies';
+
 
 
 export default class PopularMovies extends React.Component {

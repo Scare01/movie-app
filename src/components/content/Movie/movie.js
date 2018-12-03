@@ -1,6 +1,7 @@
 import React from 'react';
 import { Item, Button, Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+import './movies.css';
 
 
 
@@ -57,7 +58,8 @@ export default class Movie extends React.Component {
     
     const link_detail = window.location.href.includes('MovieDetail') ?
                         null :
-                        <Link to={link_url + this.props.movie.id}>
+                        <Link to={link_url + this.props.movie.id} className='ui icon left labeled button'>
+                          <Icon name="list ul" />
                           Details
                         </Link>;
                         
@@ -72,26 +74,32 @@ export default class Movie extends React.Component {
       <Item>
         <Item.Image src={img_url+this.props.movie.poster_path} />
 
-        <Item.Content>
-          <Item.Header><b>{this.props.movie.title}</b></Item.Header>
+        <Item.Content id='movie_details'>
+          
+          <Item.Header id='header'>{this.props.movie.title}</Item.Header>
           <Item.Meta>
             {releaseDate}
           </Item.Meta>
           <Item.Meta>
             {genres}
           </Item.Meta>
-       
-          <Item.Description>
+          <hr />
+          <Item.Description id='description'>
             {
               window.location.href.includes('Detail') ?
               this.props.movie.overview :
-              this.props.movie.overview.slice(0,250)+"..."
+              this.props.movie.overview.slice(0,170)+"..."
              }
           </Item.Description>
+          <hr />
+          <div id='button_group'>
           {link_detail}
-            <Button icon onClick={this.clickFavoriteButton}>
+            <Button icon onClick={this.clickFavoriteButton} labelPosition='right'>
+              Favorites
               <Icon name={this.state.icon ? 'heart' : 'heart outline'} /> 
             </Button> 
+          
+          </div>
                 
         </Item.Content>
       </Item>

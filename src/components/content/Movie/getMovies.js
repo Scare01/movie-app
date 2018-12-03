@@ -1,6 +1,7 @@
 import React from 'react';
 import { Fetch } from 'react-data-fetching';
 import { Item } from 'semantic-ui-react'
+import './movies.css';
 
 import Movie from './movie';
 
@@ -18,9 +19,9 @@ export default class GetMovies extends React.Component {
       >
 
       {({ data }) => (
-        <Item.Group>
+        <Item.Group id='popular_movies'>
           {data.results.map(movie =>
-            <Movie
+            <Movie 
               movie_url={main_url}
               key={movie.id} 
               movie={movie}

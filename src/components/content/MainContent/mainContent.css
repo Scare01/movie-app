@@ -1,19 +1,25 @@
 #mainContent {
   display: flex;
-  width: 100%;
+  width: 80%;
   margin:0 auto;
-
+  justify-content: space-around;
 }
 
 #movies {
-  width: 70%;
   display: flex;
   flex-direction: column;
 }
 
 #movies_small {
   display: flex;
+  margin-top: -27px;
+  
 }
+
+#movies_small > .item:last-child {
+  margin-top: 0;
+}
+
 
 #movie_title {
   position: relative;
@@ -26,20 +32,52 @@
   
 }
 
-
-.movies_item:last-child {
-  float: right;
+.small_movie_title {
+  position: relative;
+  display: inline-block;
+  font-size: 1.2em;
+  text-shadow: 2px 2px 2px black;
+  color: white;
+  top: -30px;
+  left: 10px;
 }
-
-
 
 
 
 #tvshows {
-  width: 100%;
-  margin: 10px;
-  height: 500px;
-  display: flex;
-  flex-direction: column;
+ display: flex;
+ flex-direction: column;
+ 
 }
 
+#tv_small {
+  display: flex;
+  margin-top: -27px;
+  
+}
+
+#tv_small > .item:last-child {
+  margin-top: 0;
+}
+
+
+#tv_title {
+  position: relative;
+  display: inline-block;
+  font-size: 1.5em;
+  text-shadow: 2px 2px 2px black;
+  color: white;
+  top: -30px;
+  left: 10px;
+  
+}
+
+.small_tv_title {
+  position: relative;
+  display: inline-block;
+  font-size: 1.2em;
+  text-shadow: 2px 2px 2px black;
+  color: white;
+  top: -30px;
+  left: 10px;
+}

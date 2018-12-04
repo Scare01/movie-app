@@ -1,6 +1,7 @@
 import React from 'react';
 import { Fetch } from 'react-data-fetching';
-import { Item } from 'semantic-ui-react'
+import { Item } from 'semantic-ui-react';
+import '../movies_tvs.css';
 
 import TvShow from './tvshow';
 
@@ -18,7 +19,7 @@ export default class GetTvShows extends React.Component {
       >
 
       {({ data }) => (
-        <Item.Group>
+        <Item.Group id='popular_movies'>
           {data.results.map(tvshow =>
             <TvShow
               tvshow_url={main_url}

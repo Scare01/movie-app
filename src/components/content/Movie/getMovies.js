@@ -1,7 +1,7 @@
 import React from 'react';
 import { Fetch } from 'react-data-fetching';
 import { Item } from 'semantic-ui-react'
-import './movies.css';
+import '../movies_tvs.css';
 
 import Movie from './movie';
 

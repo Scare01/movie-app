@@ -36,7 +36,8 @@ export default class TvShow extends React.Component {
     
     const link_detail = window.location.href.includes('TvShowDetail') ?
                         null :
-                        <Link to={link_url + this.props.tvshow.id}>
+                        <Link to={link_url + this.props.tvshow.id} className='ui icon left labeled button'>
+                          <Icon name="list ul" />
                           Details
                         </Link>;
                         
@@ -51,24 +52,28 @@ export default class TvShow extends React.Component {
       <Item>
         <Item.Image src={img_url+this.props.tvshow.poster_path} />
 
-        <Item.Content>
-          <Item.Header><b>{this.props.tvshow.name}</b></Item.Header>
+        <Item.Content  id='movie_details'>
+          <Item.Header id='header'><b>{this.props.tvshow.name}</b></Item.Header>
           
           <Item.Meta>
             {genres}
           </Item.Meta>
-       
-          <Item.Description>
+          <hr />
+          <Item.Description id='description'>
             {
               window.location.href.includes('Details') ?
               this.props.tvshow.overview :
               this.props.tvshow.overview.slice(0,250)+'...'
             }
           </Item.Description>
-          {link_detail}
-          <Button icon onClick={this.clickFavoriteButton}>
+          <hr />
+          <div id='button_group'>
+            {link_detail}
+            <Button icon onClick={this.clickFavoriteButton} labelPosition='right'>
+              Favorites
               <Icon name={this.state.icon ? 'heart' : 'heart outline'} /> 
             </Button> 
+          </div>
         </Item.Content>
       </Item>
     )

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Item, Button, Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import './movies.css';
+import '../movies_tvs.css';
 
 
 

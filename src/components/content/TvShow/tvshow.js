@@ -58,7 +58,10 @@ export default class TvShow extends React.Component {
           <Item.Meta>
             {genres}
           </Item.Meta>
-          <hr />
+          <hr className={ window.location.href.includes("Detail") ? 
+                          'hr_details' :
+                          null
+                        }/>
           <Item.Description id='description'>
             {
               window.location.href.includes('Details') ?
@@ -66,7 +69,10 @@ export default class TvShow extends React.Component {
               this.props.tvshow.overview.slice(0,250)+'...'
             }
           </Item.Description>
-          <hr />
+          <hr className={ window.location.href.includes("Detail") ? 
+                          'hr_details' :
+                          null
+                        }/>
           <div id='button_group'>
             {link_detail}
             <Button icon onClick={this.clickFavoriteButton} labelPosition='right'>

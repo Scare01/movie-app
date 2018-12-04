@@ -1,0 +1,26 @@
+ .hr_details {
+  visibility: hidden;
+}
+
+.item {
+  display: flex;
+  flex: 0 50%;
+}
+
+
+#movie_details > #header_detail {
+  font-size: 2.5em;
+  margin: 5px;
+  line-height: .5em;
+}
+
+#movie_details > #details_description {
+  width: 80%;
+  padding: 1em;
+  margin-top: 80px;
+  font-size: 1.1em;
+}
+
+#genres {
+  font-size: 1.5em;
+}

@@ -37,15 +37,15 @@ export default class Movie extends React.Component {
     
 
 
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug',
+    let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug',
                     'Sep', 'Oct', 'Nov', 'Dec']
-    const img_url = 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/';
+    let img_url = 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/';
     
-    const month_num = this.props.movie.release_date ? 
+    let month_num = this.props.movie.release_date ? 
                       (this.props.movie.release_date.split('-').splice(1,1))
                       : null;
     
-    const releaseDate = this.props.movie.release_date ? 
+    let releaseDate = this.props.movie.release_date ? 
                         <i>
                         {this.props.movie.release_date.split('-')[2]}
                         <span> </span>
@@ -54,44 +54,62 @@ export default class Movie extends React.Component {
                         {this.props.movie.release_date.split('-')[0]}
                         </i>
                         : null;
-    const link_url = '/MovieDetail/'
+    let link_url = '/MovieDetail/'
     
-    const link_detail = window.location.href.includes('MovieDetail') ?
+    let link_detail = window.location.href.includes('MovieDetail') ?
                         null :
                         <Link to={link_url + this.props.movie.id} className='ui icon left labeled button'>
                           <Icon name="list ul" />
                           Details
                         </Link>;
                         
-    const genres = window.location.href.includes('MovieDetail') ?
+    let genres = window.location.href.includes('MovieDetail') ?
                     <>
                     {this.props.movie.genres.map(genre => 
                       <span key={genre.id}>{genre.name} </span>
                     )}
                     </> :
                     null;
+    
        return(
       <Item>
         <Item.Image src={img_url+this.props.movie.poster_path} />
 
         <Item.Content id='movie_details'>
           
-          <Item.Header id='header'>{this.props.movie.title}</Item.Header>
+          <Item.Header id={
+                            window.location.href.includes('Detail') ?
+                            'header_detail' :
+                            'header'
+                            }
+          >
+            {this.props.movie.title}
+          </Item.Header>
           <Item.Meta>
             {releaseDate}
           </Item.Meta>
-          <Item.Meta>
+          <Item.Meta id='genres'>
             {genres}
           </Item.Meta>
-          <hr />
-          <Item.Description id='description'>
+          <hr className={ window.location.href.includes("Detail") ? 
+                          'hr_details' :
+                          null
+                        } />
+          
+          <Item.Description id= {window.location.href.includes('Detail') ? 
+                                'details_description' :
+                                'description'  
+                              }>
             {
               window.location.href.includes('Detail') ?
               this.props.movie.overview :
               this.props.movie.overview.slice(0,170)+"..."
              }
           </Item.Description>
-          <hr />
+          <hr className={ window.location.href.includes("Detail") ? 
+                          'hr_details' :
+                          null
+                        } />
           <div id='button_group'>
           {link_detail}
             <Button icon onClick={this.clickFavoriteButton} labelPosition='right'>

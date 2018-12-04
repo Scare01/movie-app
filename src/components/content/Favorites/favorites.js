@@ -4,6 +4,7 @@ import { Header, Item } from 'semantic-ui-react';
 import Movie from '../Movie/movie';
 import TvShow from '../TvShow/tvshow';
 
+import '../movies_tvs.css';
 
 export default class Favorites extends React.Component {
   render() {
@@ -13,7 +14,7 @@ export default class Favorites extends React.Component {
       <>
         <Header as="h3" textAlign="center">Favorites</Header>
         
-        <Item.Group>
+        <Item.Group id='popular_movies'>
         {list_of_favorites.map(movie =>
           movie.includes('movie') ?
           <Movie 

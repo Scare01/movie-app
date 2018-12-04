@@ -19,8 +19,9 @@ export default class Movies extends React.Component {
           <Item>
             <a href={detail_url + data.results[0].id}>
               <Item.Image src={img_url_wide + data.results[0].backdrop_path} />
+              <span id='movie_title'>{data.results[0].title}</span>
             </a>
-            <span id='movie_title'>{data.results[0].title}</span>
+            
           </Item>
             
           

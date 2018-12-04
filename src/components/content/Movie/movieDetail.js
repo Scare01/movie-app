@@ -13,7 +13,7 @@ export default class MovieDetail extends React.Component {
     
 
     return (
-      <>
+      <div id='details'>
         <Movie 
           movie={this.props.movie}
         />
@@ -29,7 +29,7 @@ export default class MovieDetail extends React.Component {
           movie={this.props.movie}
         />
 
-      </>
+      </div>
     )
   }
 }

@@ -1,8 +1,9 @@
 import React from 'react';
-import { Item } from 'semantic-ui-react';
+import { Item, Icon } from 'semantic-ui-react';
 import { Fetch } from 'react-data-fetching';
 import { Link } from 'react-router-dom';
 
+import '../movies_tvs.css';
 
 
 export default class GetSearchMovie extends React.Component {
@@ -18,7 +19,7 @@ export default class GetSearchMovie extends React.Component {
 
     if (request) {
       return (
-        <Item.Group>
+        <Item.Group id='popular_movies'>
         <Fetch url={main_url+api_key+'&query='+request}>
           {({data}) => (
             data.results.map(movie =>
@@ -26,8 +27,8 @@ export default class GetSearchMovie extends React.Component {
 
                   <Item key={movie.id}>
                     <Item.Image src={img_url+movie.poster_path} />
-                    <Item.Content>
-                      <Item.Header>
+                    <Item.Content id='movie_details'>
+                      <Item.Header id='header'>
                         {
                           movie.media_type === 'movie' ? 
                           movie.title :
@@ -37,18 +38,25 @@ export default class GetSearchMovie extends React.Component {
                       <Item.Meta>
                         {movie.media_type}
                       </Item.Meta>
-                      <Item.Description>
+                      <Item.Description id="description">
                         {
                          movie.overview ?
                          movie.overview.slice(0,250) + '...' :
                          null
                         }
                       </Item.Description>
-                      <Link to={ movie.media_type === 'movie' ? 
-                              movieDetailUrl+movie.id :
-                              tvShowDetailUrl+movie.id
-                              } 
-                      > Details </Link> 
+                      <div id='button_group'>
+                        <Link to={ movie.media_type === 'movie' ? 
+                                movieDetailUrl+movie.id :
+                                tvShowDetailUrl+movie.id
+                              }
+                              className='ui icon left labeled button' 
+                        > 
+                          <Icon name="list ul" />
+                          Details
+                        </Link> 
+                      </div>
+                      
                                        
                     </Item.Content>
                   </Item> :

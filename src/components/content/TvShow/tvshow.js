@@ -34,14 +34,14 @@ export default class TvShow extends React.Component {
     
     const link_url = '/TvShowDetail/'
     
-    const link_detail = window.location.href.includes('TvShowDetail') ?
+    const link_detail = window.location.href.includes('Detail') ?
                         null :
                         <Link to={link_url + this.props.tvshow.id} className='ui icon left labeled button'>
                           <Icon name="list ul" />
                           Details
                         </Link>;
                         
-    const genres = window.location.href.includes('TvShowDetail') ?
+    const genres = window.location.href.includes('Detail') ?
                     <>
                     {this.props.tvshow.genres.map(genre => 
                       <span key={genre.id}>{genre.name} </span>
@@ -49,7 +49,7 @@ export default class TvShow extends React.Component {
                     </> :
                     null;
        return(
-      <Item>
+      <Item className='cardMovieOrTv'>
         <Item.Image src={img_url+this.props.tvshow.poster_path} />
 
         <Item.Content  id='movie_details'>
@@ -64,7 +64,7 @@ export default class TvShow extends React.Component {
                         }/>
           <Item.Description id='description'>
             {
-              window.location.href.includes('Details') ?
+              window.location.href.includes('Detail') ?
               this.props.tvshow.overview :
               this.props.tvshow.overview.slice(0,250)+'...'
             }

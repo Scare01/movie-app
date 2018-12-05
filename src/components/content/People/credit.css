@@ -1,15 +1,43 @@
 #credits > .card {
-  width: 200px;
+  width: 150px;
 }
 
 #credits {
-  margin: 5px;
+  
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   
- 
 }
 
-#credits > .card {
+.ui.card:first-child {
+  margin-top: 1em;
+}
+
+.ui.card:last-child {
+  margin-bottom: 1em;
+}
+
+
+#panel {
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
   
+  
+}
+
+#panel > .item {
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 1em;
+  border-top: .5px solid lightgrey;
+  border-radius: 10px;
+}
+
+
+#recommend_title {
+  align-self: center;
+  width: 80%;
 }

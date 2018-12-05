@@ -15,7 +15,7 @@ export default class GetRecomTvShow extends React.Component {
     const url_part2 = '/recommendations?api_key=';
     const api_key = '8f2490decc0a336ae87db98a12a29a59';
     const tvshowDetailUrl = '/tvshowDetail/';
-    const img_url = 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/';
+    const img_url = 'https://image.tmdb.org/t/p/w500_and_h282_face/';
 
     
 

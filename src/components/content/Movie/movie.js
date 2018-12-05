@@ -5,6 +5,7 @@ import '../movies_tvs.css';
 
 
 
+
 export default class Movie extends React.Component {
 
   state = {
@@ -70,9 +71,11 @@ export default class Movie extends React.Component {
                     )}
                     </> :
                     null;
+
+    
     
        return(
-      <Item>
+      <Item className='cardMovieOrTv'>
         <Item.Image src={img_url+this.props.movie.poster_path} />
 
         <Item.Content id='movie_details'>
@@ -110,6 +113,7 @@ export default class Movie extends React.Component {
                           'hr_details' :
                           null
                         } />
+          
           <div id='button_group'>
           {link_detail}
             <Button icon onClick={this.clickFavoriteButton} labelPosition='right'>

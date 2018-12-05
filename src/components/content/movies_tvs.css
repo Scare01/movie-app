@@ -42,4 +42,26 @@ hr {
   margin-top: auto;
 }
 
+#popular_movies > .cardMovieOrTv {
+  border-top: .5px solid lightgrey;
+  border-bottom: .5px solid lightgrey;
+  
+  padding: 10px;
+  border-radius: 10px;
+}
 
+#search_panel {
+  display: flex;
+  flex-direction: column;
+}
+
+#search_panel > .ui.input {
+  width: 40%;
+  align-self: center;
+  margin: .3em;
+}
+
+#search_panel > #button_search {
+  width: 20%;
+  align-self: center;
+}

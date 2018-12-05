@@ -3,7 +3,7 @@ import { Input, Header, Button } from 'semantic-ui-react';
 
 
 import GetSearchMovie from './getSearchMovie';
-
+import '../movies_tvs.css';
 
 
 export default class SearchMovie extends React.Component {
@@ -46,14 +46,14 @@ export default class SearchMovie extends React.Component {
     
     
     return (
-      <>
+      <div id='search_panel'>
         
         <Input
           onChange={this.setSearchRequest}
           placeholder="search movie or tv show" 
           value={this.state.search_request}
         />
-        <Button onClick={this.searchMovie}>Search</Button>
+        <Button onClick={this.searchMovie} id='button_search'>Search</Button>
 
         <Header as="h2" textAlign="center">Search results: </Header>
         
@@ -69,7 +69,7 @@ export default class SearchMovie extends React.Component {
 
       
         
-      </>
+      </div>
     )
   }
 }

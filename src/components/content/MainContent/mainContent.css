@@ -81,3 +81,46 @@
   top: -30px;
   left: 10px;
 }
+
+
+
+#top_rating {
+  display: flex;
+  margin:0 auto;
+  width: 70%;
+  justify-content: space-around;
+  padding: 15px;
+  
+}
+
+#top_movies_items {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0 50%;
+}
+
+#top_tv_items {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0 50%;
+}
+
+#top_tv_items {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0 50%;
+}
+
+
+
+#top_movies_items > .item, #top_tv_items > .item {
+  margin: -25px 0 0 0;
+  
+  padding: 0;
+}
+
+
+#top_movies_items:nth-child(even) {
+  margin-left: -15px; 
+}
+

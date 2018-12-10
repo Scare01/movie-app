@@ -12,11 +12,11 @@ export default class SearchMovie extends React.Component {
 
   state = {
     search_request: '',
-    colorMovie: 'blue',
-    colorTvShow: 'blue',
-    main_url: null,
     searchMovie: '',  
   }
+
+
+
 
     
   setSearchRequest = (e) => {
@@ -33,11 +33,8 @@ export default class SearchMovie extends React.Component {
       search_request: '',
       
     });
-
-    
-  
-    
   }
+
 
 
   

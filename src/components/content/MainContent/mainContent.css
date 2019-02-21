@@ -35,10 +35,10 @@
 .small_movie_title {
   position: relative;
   display: inline-block;
-  font-size: 1.2em;
+  font-size: 1em;
   text-shadow: 2px 2px 2px black;
   color: white;
-  top: -30px;
+  top: -40px;
   left: 10px;
 }
 
@@ -72,15 +72,6 @@
   
 }
 
-.small_tv_title {
-  position: relative;
-  display: inline-block;
-  font-size: 1.2em;
-  text-shadow: 2px 2px 2px black;
-  color: white;
-  top: -30px;
-  left: 10px;
-}
 
 
 

@@ -29,7 +29,7 @@ export default class TvShow extends React.Component {
                 <Item key={tvshow.id}>
                   <a href={detail_url + tvshow.id}>
                     <Item.Image src={img_url + tvshow.backdrop_path} />
-                    <span id='movie_title'>{tvshow.name}</span>
+                    <span className='small_movie_title'>{tvshow.name}</span>
                   </a>
                 </Item>  
               )}
